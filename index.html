@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate Management Consultancy — Operational Excellence for Manufacturing &amp; Machining SMEs</title>
+<meta name="description" content="Elevate is a strategic management consultancy helping manufacturing & machining SMEs build lean, scalable, profitable operations — with measurable, on-ground results.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Libre+Franklin:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1a7a4e;--green-dark:#0f5234;--green-accent:#5cb52e;
+    --blue:#15539b;--blue-dark:#0f3f78;--ink:#171c22;--muted:#69727d;
+    --line:#e6eae7;--paper:#ffffff;--tint:#f4f8f5;--tint-blue:#eef3fa;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Libre Franklin",system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .accent-bar{height:6px;background:var(--green);width:100%;}
+
+  /* serif display helper */
+  .serif{font-family:"Fraunces",serif;}
+
+  /* ===== NAV ===== */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--maxw);margin:0 auto;}
+  .nav-logo{height:38px;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{text-decoration:none;font-size:14px;font-weight:600;color:var(--ink);opacity:.8;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;color:var(--green);}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 22px;border-radius:40px;transition:background .2s,transform .2s;}
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px);}
+  .btn-accent{background:var(--green-accent);color:#0c2f12;}
+  .btn-accent:hover{background:#4ea024;}
+  .nav-toggle{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);}
+
+  /* ===== HERO ===== */
+  .hero{padding:84px 0 70px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-160px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(92,181,46,.10),transparent 68%);z-index:0;}
+  .hero .wrap{position:relative;z-index:1;}
+  .kicker{display:inline-flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:26px;}
+  .kicker::before{content:"";width:34px;height:3px;background:var(--green-accent);margin-right:14px;}
+  .hook{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,7vw,82px);line-height:1.04;letter-spacing:-1.5px;}
+  .hook em{font-style:normal;color:var(--green);}
+  .sub-hook{font-size:clamp(17px,2vw,21px);color:var(--muted);margin-top:30px;max-width:680px;}
+  .sub-hook b{color:var(--ink);font-weight:600;}
+  .hero-cta{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .hero-creds{font-size:13px;color:var(--muted);font-weight:500;}
+
+  /* ===== SECTION FRAME ===== */
+  section{padding:78px 0;}
+  .sec-tag{display:inline-flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+  .sec-tag::before{content:"";width:28px;height:3px;background:var(--green-accent);margin-right:12px;}
+  .sec-title{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.5px;max-width:760px;}
+  .sec-intro{font-size:17px;color:var(--muted);margin-top:18px;max-width:680px;}
+
+  /* ===== CHALLENGES ===== */
+  .challenges{background:var(--tint);}
+  .chal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;}
+  .chal{background:#fff;border:1px solid var(--line);border-left:3px solid var(--green-accent);border-radius:8px;padding:22px 22px;font-size:15.5px;font-weight:500;color:#374049;}
+  .chal b{color:var(--ink);}
+  .chal-note{margin-top:38px;font-family:"Fraunces",serif;font-size:clamp(20px,2.6vw,28px);font-weight:500;color:var(--green-dark);max-width:840px;line-height:1.3;}
+
+  /* ===== SERVICES ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+  .svc{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:10px;padding:26px 22px;background:var(--tint-blue);transition:transform .2s,box-shadow .2s;}
+  .svc:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(21,83,155,.12);}
+  .svc .num{font-family:"Fraunces",serif;font-weight:700;font-size:18px;color:var(--blue);opacity:.5;}
+  .svc h3{font-size:17px;font-weight:700;color:var(--blue-dark);margin:8px 0 10px;line-height:1.2;}
+  .svc p{font-size:14px;color:var(--muted);line-height:1.5;}
+
+  /* ===== PROCESS ===== */
+  .process{background:var(--ink);color:#fff;}
+  .process .sec-title{color:#fff;}
+  .process .sec-intro{color:#aab2bd;}
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:48px;}
+  .step{position:relative;padding-top:22px;border-top:2px solid rgba(255,255,255,.14);}
+  .step .n{font-family:"Fraunces",serif;font-weight:900;font-size:38px;color:var(--green-accent);line-height:1;}
+  .step h4{font-size:18px;font-weight:700;margin:10px 0 10px;}
+  .step ul{list-style:none;}
+  .step li{font-size:13.5px;color:#aeb6c0;padding-left:16px;position:relative;margin-bottom:7px;line-height:1.45;}
+  .step li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:1px;background:var(--green-accent);}
+
+  /* ===== RESULTS ===== */
+  .results{background:var(--tint);}
+  .metrics-hero{background:linear-gradient(120deg,var(--green-dark),var(--green));border-radius:16px;padding:42px 44px;margin-top:42px;color:#fff;position:relative;overflow:hidden;}
+  .metrics-hero::before{content:"";position:absolute;right:-60px;top:-90px;width:280px;height:280px;border-radius:50%;background:rgba(92,181,46,.18);}
+  .mh-label{position:relative;z-index:1;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.9;margin-bottom:24px;}
+  .metrics{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .metric{background:rgba(255,255,255,.10);border-left:3px solid var(--green-accent);border-radius:8px;padding:18px 20px;}
+  .metric .name{font-size:13px;opacity:.9;text-transform:uppercase;letter-spacing:.4px;min-height:34px;}
+  .metric .nums{display:flex;align-items:baseline;gap:8px;margin-top:8px;white-space:nowrap;}
+  .metric .from{font-size:18px;opacity:.7;text-decoration:line-through;}
+  .metric .arrow{color:#bff0a0;font-weight:800;}
+  .metric .to{font-family:"Fraunces",serif;font-weight:900;font-size:36px;line-height:1;color:#fff;}
+
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px;}
+  .case{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;}
+  .case .tag{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);}
+  .case h4{font-family:"Fraunces",serif;font-size:21px;font-weight:600;margin:6px 0 16px;}
+  .case h5{font-size:13px;font-weight:700;color:var(--blue-dark);text-transform:uppercase;letter-spacing:.5px;margin:14px 0 8px;}
+  .case ul{list-style:none;}
+  .case li{font-size:14px;color:#3a424c;padding-left:16px;position:relative;margin-bottom:6px;line-height:1.45;}
+  .case li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:1px;background:var(--green-accent);}
+  .measured{text-align:center;margin-top:34px;font-family:"Fraunces",serif;font-size:clamp(18px,2.4vw,24px);font-weight:500;color:var(--green-dark);}
+
+  /* ===== WHY ===== */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 34px;margin-top:48px;}
+  .why-item{padding-left:0;}
+  .why-item .ic{width:38px;height:38px;border-radius:9px;background:var(--tint);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .why-item .ic svg{width:20px;height:20px;}
+  .why-item h4{font-size:16.5px;font-weight:700;margin-bottom:7px;}
+  .why-item p{font-size:14.5px;color:var(--muted);line-height:1.55;}
+
+  /* ===== FOUNDERS ===== */
+  .founders{background:var(--tint-blue);}
+  .fnd-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:44px;}
+  .fnd{display:flex;gap:22px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;}
+  .fnd img{width:104px;height:124px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#dde6ef;}
+  .fnd .role{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);}
+  .fnd h4{font-family:"Fraunces",serif;font-size:22px;font-weight:600;margin:3px 0 10px;}
+  .fnd .creds{font-size:13px;font-weight:600;color:var(--blue-dark);margin-bottom:10px;}
+  .fnd p{font-size:13.5px;color:var(--muted);line-height:1.5;}
+  .fnd-quote{text-align:center;margin-top:40px;font-family:"Fraunces",serif;font-size:clamp(19px,2.6vw,27px);font-weight:500;font-style:italic;color:var(--ink);max-width:880px;margin-left:auto;margin-right:auto;line-height:1.35;}
+
+  /* ===== CTA / CONTACT ===== */
+  .cta{background:linear-gradient(115deg,var(--green-dark),var(--green));color:#fff;position:relative;overflow:hidden;}
+  .cta::before{content:"";position:absolute;right:-120px;bottom:-160px;width:440px;height:440px;border-radius:50%;background:rgba(92,181,46,.16);}
+  .cta .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+  .cta h2{font-family:"Fraunces",serif;font-size:clamp(30px,4.5vw,46px);font-weight:600;line-height:1.08;}
+  .cta .lead{font-size:17px;opacity:.92;margin-top:18px;max-width:480px;}
+  .cta .pill{display:inline-flex;align-items:center;gap:12px;margin-top:26px;font-size:15px;font-weight:500;}
+  .cta .pill span{background:var(--green-accent);color:#0c2f12;padding:9px 20px;border-radius:40px;font-weight:700;}
+  .contact-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:30px;}
+  .contact-card .row{margin-bottom:22px;}
+  .contact-card .row:last-child{margin-bottom:0;}
+  .contact-card .name{font-weight:700;font-size:18px;}
+  .contact-card .ph{font-size:15px;margin-top:3px;opacity:.92;}
+  .contact-card a{display:inline-block;font-size:14px;margin-top:4px;color:#dff3c9;text-decoration:none;word-break:break-all;}
+  .contact-card a:hover{text-decoration:underline;}
+
+  footer.site{background:var(--ink);color:#9aa3ad;padding:30px 0;font-size:13px;}
+  footer.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  footer.site img{height:30px;opacity:.9;filter:brightness(0) invert(1);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:920px){
+    .chal-grid,.svc-grid,.proc-grid,.metrics{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .cases,.fnd-grid{grid-template-columns:1fr;}
+    .cta .wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .nav-links{position:fixed;inset:64px 0 auto 0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 20px 18px;border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(0,0,0,.08);display:none;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:13px 0;width:100%;border-bottom:1px solid var(--line);font-size:16px;}
+    .nav-links .btn{margin-top:12px;border-bottom:0;}
+    .nav-toggle{display:block;}
+    .chal-grid,.svc-grid,.proc-grid,.metrics{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+    .hero{padding:54px 0 48px;}
+    .metrics-hero{padding:28px 24px;}
+    .fnd{flex-direction:column;}
+    .fnd img{width:100%;height:200px;}
+  }
+</style>
+</head>
+<body>
+<div class="accent-bar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top"><img class="nav-logo" src="assets/logo.png" alt="Elevate Management Consultancy"></a>
+    <div class="nav-links" id="navlinks">
+      <a href="#challenges">Challenges</a>
+      <a href="#services">Services</a>
+      <a href="#process">How We Work</a>
+      <a href="#results">Results</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact" class="btn">Book a Free Assessment</a>
+    </div>
+    <button class="nav-toggle" id="navtoggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="kicker">Operational Excellence for Manufacturing &amp; Machining SMEs</span>
+    <h1 class="hook">Rejections up.<br>Margins down.<br><em>And no one knows why.</em></h1>
+    <p class="sub-hook">Your business doesn't struggle for lack of opportunity — it struggles because operations weren't built to scale. <b>We fix that on your shopfloor</b>, with your team, until the numbers move and the system runs without us.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-accent">Book a Free Gap Assessment</a>
+      <span class="hero-creds">PMP · VDA 6.3 Lead Auditor · IATF 16949 · 38+ yrs combined</span>
+    </div>
+  </div>
+</header>
+
+<!-- CHALLENGES -->
+<section class="challenges" id="challenges">
+  <div class="wrap">
+    <span class="sec-tag">The Real Problem</span>
+    <h2 class="sec-title">Growth is exciting — but it brings complexity most SMEs are unprepared for.</h2>
+    <p class="sec-intro">You're not alone. As manufacturing companies grow, the same operational cracks appear again and again:</p>
+    <div class="chal-grid">
+      <div class="chal">Processes <b>slow down</b> and productivity takes the hit.</div>
+      <div class="chal"><b>Rejections climb</b> and customer complaints pile up.</div>
+      <div class="chal"><b>Firefighting</b> becomes the daily routine.</div>
+      <div class="chal">No clarity on <b>where the money is going</b> — or how to fix it.</div>
+      <div class="chal"><b>Margins keep shrinking</b>, and the reasons stay hidden.</div>
+      <div class="chal">Technology and systems <b>aren't built to scale</b> the business.</div>
+    </div>
+    <p class="chal-note">SMEs don't struggle because of a lack of opportunities. They struggle because their operations aren't built to scale.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="sec-tag">What We Offer</span>
+    <h2 class="sec-title">Expert guidance across the four pillars of a scalable operation.</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="num">01</div>
+        <h3>Operational Strategy</h3>
+        <p>Lean workflow redesign, waste reduction, automation opportunities, data dashboards and accountability structures built to scale.</p>
+      </div>
+      <div class="svc">
+        <div class="num">02</div>
+        <h3>Quality Management Systems</h3>
+        <p>ISO 9001, IATF 16949 &amp; VDA 6.3 implementation, maintenance and audit support — including third-party VDA 6.3 audits.</p>
+      </div>
+      <div class="svc">
+        <div class="num">03</div>
+        <h3>Project Management</h3>
+        <p>End-to-end program execution to meet timelines, quality and cost, with risk management and escalation control.</p>
+      </div>
+      <div class="svc">
+        <div class="num">04</div>
+        <h3>Training &amp; Skill Development</h3>
+        <p>APQP, PPAP, PFMEA, MSA, SPC, 7 QC Tools, 5S, OEE &amp; COPQ, plus leadership and communication coaching.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="sec-tag">How We Work</span>
+    <h2 class="sec-title">We don't just consult — we work with your teams until results are real and measurable.</h2>
+    <div class="proc-grid">
+      <div class="step">
+        <div class="n">01</div>
+        <h4>Analyze</h4>
+        <ul>
+          <li>Process assessment, data review &amp; on-ground observation</li>
+          <li>Identify bottlenecks, waste, gaps &amp; hidden inefficiencies</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h4>Design</h4>
+        <ul>
+          <li>Standardized workflows as per best practices</li>
+          <li>Lean tools, automation &amp; data dashboards</li>
+          <li>Team structure, accountability &amp; baseline KPIs</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h4>Deploy &amp; Train</h4>
+        <ul>
+          <li>Implement improvements on shopfloor &amp; office</li>
+          <li>Train people, set ownership, ensure adoption</li>
+          <li>Establish SOPs &amp; digital tracking</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h4>Monitor &amp; Optimize</h4>
+        <ul>
+          <li>Weekly &amp; monthly KPI tracking</li>
+          <li>Review results, refine where needed</li>
+          <li>Build a culture of continuous improvement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="wrap">
+    <span class="sec-tag">Proof, Not Promises</span>
+    <h2 class="sec-title">Results our clients have achieved.</h2>
+
+    <div class="metrics-hero">
+      <div class="mh-label">Manufacturing SME — Automotive Components</div>
+      <div class="metrics">
+        <div class="metric"><div class="name">Cost of Poor Quality</div><div class="nums"><span class="from">11.7%</span><span class="arrow">→</span><span class="to">6.4%</span></div></div>
+        <div class="metric"><div class="name">Overall Equipment Effectiveness</div><div class="nums"><span class="from">65%</span><span class="arrow">→</span><span class="to">78%</span></div></div>
+        <div class="metric"><div class="name">On-time Delivery</div><div class="nums"><span class="from">68%</span><span class="arrow">→</span><span class="to">88%</span></div></div>
+        <div class="metric"><div class="name">EBITDA</div><div class="nums"><span class="from">8%</span><span class="arrow">→</span><span class="to">11%</span></div></div>
+      </div>
+    </div>
+
+    <div class="cases">
+      <div class="case">
+        <span class="tag">Case 1 · Automotive Components</span>
+        <h4>From operator-dependent to system-driven.</h4>
+        <h5>The Problem</h5>
+        <ul>
+          <li>High rejection %, high downtime, long changeover times</li>
+          <li>Delayed deliveries and low customer satisfaction</li>
+        </ul>
+        <h5>What We Did</h5>
+        <ul>
+          <li>Lean workflow redesign &amp; process standardization</li>
+          <li>Waste reduction and optimized production planning</li>
+          <li>Aligned shopfloor operations with business goals</li>
+        </ul>
+        <h5>The Result</h5>
+        <ul>
+          <li>Monthly output increased — with no additional machines</li>
+          <li>COPQ, OEE, delivery &amp; EBITDA all improved (see above)</li>
+        </ul>
+      </div>
+      <div class="case">
+        <span class="tag">Case 2 · Machining Company</span>
+        <h4>From intuition to data-driven decisions.</h4>
+        <h5>The Problem</h5>
+        <ul>
+          <li>No cost visibility across orders</li>
+          <li>Pricing made on intuition, not data</li>
+          <li>High material wastage and low profitability</li>
+        </ul>
+        <h5>What We Did</h5>
+        <ul>
+          <li>Cost mapping &amp; margin tracking system</li>
+          <li>Digital dashboard for real-time order profitability</li>
+          <li>Weekly performance review with team ownership</li>
+        </ul>
+        <h5>The Result</h5>
+        <ul>
+          <li>Margin clarity across all orders &amp; lower costs</li>
+          <li>Improved quotation accuracy and win rate</li>
+        </ul>
+      </div>
+    </div>
+    <p class="measured">Every project is measured, monitored, and reported — because improvement only matters when it shows in numbers.</p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <span class="sec-tag">Why Clients Choose Us</span>
+    <h2 class="sec-title">We are not consultants who give reports. We are partners who deliver results.</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><path d="M3 12l5 5L21 4"/></svg></div>
+        <h4>Implementation, not theory</h4>
+        <p>We work on the ground with your teams until the system runs smoothly — not just PowerPoint suggestions.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+        <h4>Measurable, data-backed results</h4>
+        <p>Every project is driven by KPIs — rejection %, output, delivery, margins and ROI. If it can't be measured, we don't call it improvement.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <h4>Customized, never copy–paste</h4>
+        <p>Every SME is unique — we design systems around your machines, people, capacity and goals.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h4>Shopfloor + business sense</h4>
+        <p>We bridge the gap between operations, finance, sales and technology to unlock the full business.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h4>Fast ROI, lasting outcomes</h4>
+        <p>Changes don't fade after we leave — we train teams, create ownership and build a culture of improvement.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4e" stroke-width="2.2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 .8-3.8 2-5"/></svg></div>
+        <h4>Teams that run without us</h4>
+        <p>Clear roles, KPI owners and communication flow — no dependence on a single person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders" id="founders">
+  <div class="wrap">
+    <span class="sec-tag">Founders &amp; Leadership</span>
+    <h2 class="sec-title">38+ years of real, on-ground execution.</h2>
+    <div class="fnd-grid">
+      <div class="fnd">
+        <img src="assets/anuja.jpg" alt="Anuja Bhorpe">
+        <div>
+          <div class="role">Founder &amp; CEO</div>
+          <h4>Anuja Bhorpe</h4>
+          <div class="creds">Mechanical Engineer · CEO Program, IIM Lucknow · PMP</div>
+          <p>22+ years in Plant Operations, Toolroom, Quality and Project Management. Has worked with Skoda Auto Volkswagen, Jaguar Land Rover (UK), Mahindra, Continental, Bosch, Valeo and Hitachi Astemo. Known for practical, people-driven transformation and measurable results.</p>
+        </div>
+      </div>
+      <div class="fnd">
+        <img src="assets/amit.jpg" alt="Amit Babar">
+        <div>
+          <div class="role">Co-Founder</div>
+          <h4>Amit Babar</h4>
+          <div class="creds">Mechanical Engineer · VDA 6.3 Lead Auditor · IATF 16949 Internal Auditor</div>
+          <p>16+ years of Quality, QMS and Operations leadership. Strong expertise in quality systems, root-cause analysis, COPQ reduction and lean production.</p>
+        </div>
+      </div>
+    </div>
+    <p class="fnd-quote">“Together, we bring over 38 years of real, on-ground execution experience in building scalable, process-driven systems.”</p>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Ready to transform your business?</h2>
+      <p class="lead">Let's build a scalable, profitable and process-driven organization — together. Book a free Gap Assessment and see where improvement can start immediately.</p>
+      <div class="pill"><span>See results immediately</span></div>
+    </div>
+    <div class="contact-card">
+      <div class="row">
+        <div class="name">Anuja Bhorpe</div>
+        <div class="ph">+91 98813 78004</div>
+        <a href="mailto:anuja.bhorpe@elevate-consultancygroup.com">anuja.bhorpe@elevate-consultancygroup.com</a>
+      </div>
+      <div class="row">
+        <div class="name">Amit Babar</div>
+        <div class="ph">+91 89830 46414</div>
+        <a href="mailto:amit.babar@elevate-consultancygroup.com">amit.babar@elevate-consultancygroup.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Elevate Management Consultancy">
+    <span>© 2026 Elevate Management Consultancy. Your partner in scalable, profitable growth through operational excellence.</span>
+  </div>
+</footer>
+
+<script>
+  const t=document.getElementById('navtoggle'),l=document.getElementById('navlinks');
+  t.addEventListener('click',()=>l.classList.toggle('open'));
+  l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>
